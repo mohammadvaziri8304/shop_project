@@ -1,25 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetail from './pages/ProductDetail';
+import CartPage from './pages/CartPage';
 import NotFound from './pages/NotFound';
-import ProductDetails from './components/ProductDetails';
-import Cart from './components/Cart';
-import AddProduct from './components/AddProduct';
 
 const App = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/products/:id" element={<ProductDetails />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/add-product" element={<AddProduct />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </Router>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProductsPage />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
